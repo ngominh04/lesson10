@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển cảnh img</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        section{
+            margin: 2rem auto;
+            width: 50%;
+        }
+        .zone-img img{
+            width: 100%;
+            border: 4px solid rgb(68, 221, 235);
+            border-radius: 10px;
+        }
+        li{
+            list-style: none;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        .zone{
+            display: none;
+        }
+        .active{
+            display: block;
+        }
+        .item .item-img {
+            display: flex;
+            width: 20%;
+           
+        }
+        .item .item-img li{
+            margin: 1rem;
+        }
+        .item .item-img li:hover{
+             background-color: aqua;
+        }
+        .item .item-img img{
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 80px;
+            height: 80px;
+            padding: 1rem;
+            
+        }
+
+    </style>
+ </head>
+ <body>
+    <section>
+        <div class="item">
+            <ul class="item-img">
+                <li id="a" class="active"><a href="#"class="btn"><img src="D:\images\strart.png" alt="" ></a></li>
+                <li id="b"><a href="#"class="btn"><img src="D:\images\1.png" alt="" ></a></li>
+                <li id="c"><a href="#"class="btn"><img src="D:\images\2.png" alt="" ></a></li>
+                <li id="d"><a href="#"class="btn"><img src="D:\images\huyen.jpg" alt="" ></a></li>
+                <li id="e"><a href="#"class="btn"><img src="D:\images\call.png" alt="" ></a></li>
+            </ul>
+        </div>
+        <div class="zone-img">
+            <ul>
+                <li class="zone active"id="img-a"><a href="#" >
+                    <img src="D:\images\strart.png" alt="">
+                </a></li>
+                <li class="zone" id="img-b"><a href="#">
+                    <img src="D:\images\1.png" alt="" >
+                </a></li>
+                <li class="zone" id="img-c"><a href="#">
+                    <img src="D:\images\2.png" alt="" >
+                </a></li>
+                <li class="zone" id="img-d"><a href="#">
+                    <img src="D:\images\huyen.jpg" alt="" >
+                </a></li>
+                <li class="zone" id="img-e"><a href="#">
+                    <img src="D:\images\call.png" alt="" >
+                </a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="./jquery/jquery-3.6.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                 $(".item .item-img li").removeClass("active")
+                 var valid = $(this).parent().attr('id')
+                 $("#"+valid).addClass("active")
+                 console.log(valid);
+
+                $(".zone").removeClass("active")
+                $("#img-"+valid).addClass("active")
+            })
+        })
+    </script>
+ </body>
+ </html>
