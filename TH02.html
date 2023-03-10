@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn màu chữ</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        section{
+            margin: 0.5rem auto;
+            width: 50%;
+            height: 500px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 1rem;
+
+        }
+        li{
+            
+            border: 1px solid blue;
+            border-radius: 2px;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .do{color: red;}
+        .xanh{color: blue;}
+        .vang{color: yellow;}
+        .tim{color: blueviolet;}
+        .đen{color: rgb(0, 11, 11);}
+    </style>
+ </head>
+ <body>
+    <section>
+        <div>
+            <h3><b>Chọn màu chữ</b> </h3>
+        </div>
+        <ul>
+            <li><a href="#" id="do">Đỏ </a></li>
+            <li><a href="#" id="xanh">Xanh</a></li>
+            <li><a href="#" id="vang">Vàng</a></li>
+            <li><a href="#" id="tim">Tím</a></li>
+            <li><a href="#" id="đen">Black</a></li>
+        </ul>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nesciunt voluptate obcaecati minima aut at, qui vero? Magni, omnis sunt vel fugit consectetur ducimus, provident dolores quaerat reprehenderit voluptatum repellat?</p>
+            <br><hr><br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusamus molestias iure provident facere ea aspernatur nam, numquam nisi quibusdam excepturi eius ab velit nulla odit aliquam enim totam necessitatibus.</p>
+        </div>
+    </section>
+
+    <script src="./jquery/jquery-3.6.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("a").click(function(z){
+                 var mau = z.target.id
+                 $("p").addClass(mau)
+            })
+        })
+    </script>
+   
+ </body>
+ </html>

@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        section{
+            width: 50%;
+            background-color: aqua;
+            border: 1px solid aqua;
+            border-radius: 4px;
+            margin: 2rem auto;
+        }
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+            
+        }
+        li{
+            border: 1px solid gray;
+            border-radius: 10px;
+            background-color: beige;
+            list-style: none;
+        }
+        li:hover{
+            background-color: blueviolet;
+            
+        }
+        li:hover a{
+            color: white;
+        }
+        #html{
+            background-color: blueviolet;
+        }
+        a{
+            text-decoration: none;
+        }
+        .all{
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        .content{
+            display: none;
+            text-align: center;
+        }
+        .all .active{
+            display: block;
+        }
+    </style>
+ </head>
+ <body>
+    <section>
+        <ul class="zone">
+            <li class="active"id="html"><a href="#"  class="btn">HTML</a></li>
+            <li id="css"><a href="#"  class="btn">CSS</a></li>
+            <li id="jquery"><a href="#"  class="btn">Jquery</a></li>
+            <li id="php"><a href="#"  class="btn">PHP</a></li>
+        </ul>
+        <nav class="all">
+            <div class="content active" id="content-html">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam blanditiis rerum deleniti. Voluptates error aliquid laudantium explicabo nesciunt expedita sed blanditiis tempore, illum maiores dolorum voluptatem mollitia architecto omnis in?</p>
+            </div>
+            <div class="content" id="content-css">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione veritatis delectus ad corrupti in aperiam voluptatum natus maxime explicabo esse magnam deleniti est quod accusantium cum, inventore amet doloremque.</p>
+            </div>
+            <div class="content" id="content-jquery">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias quod similique repellendus nobis at quas autem obcaecati. Mollitia facere blanditiis est eius nisi? Magnam similique quaerat maiores amet cumque nesciunt.</p>
+            </div>
+            <div class="content" id="content-php">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, voluptatem eveniet eligendi consequatur unde, repellat ipsa optio dolorum quam labore adipisci possimus soluta reprehenderit ea? Possimus reiciendis quaerat necessitatibus autem!</p>
+            </div>
+        </nav>
+        
+    </section>
+    <script src="./jquery/jquery-3.6.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                $(".zone li").removeClass("active")
+                var valueid = $(this).parent().attr('id')
+                $("#"+valueid).addClass("active")
+                console.log(valueid);
+                $(".content").removeClass("active")
+                $("#content-"+valueid).addClass("active")
+            })
+        })
+    </script>
+ </body>
+ </html>
